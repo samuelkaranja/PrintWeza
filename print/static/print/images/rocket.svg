@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="117px" height="117px" viewBox="0 0 117 117" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.5.2 (25235) - http://www.bohemiancoding.com/sketch -->
+    <title>rocket</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="-1" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.145476676 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feOffset dx="1" dy="0" in="SourceAlpha" result="shadowOffsetOuter2"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.145476676 0" in="shadowBlurOuter2" type="matrix" result="shadowMatrixOuter2"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="-2" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.173533741 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="120---iPhone" sketch:type="MSArtboardGroup" transform="translate(0.000000, -2.000000)">
+            <g id="rocket" sketch:type="MSLayerGroup" transform="translate(58.950962, 60.183013) rotate(30.000000) translate(-58.950962, -60.183013) translate(0.950962, 2.183013)">
+                <g id="rocket-body" transform="translate(0.000000, 0.000000)" sketch:type="MSShapeGroup">
+                    <circle id="bg" fill="#334D5C" cx="58" cy="58" r="58"></circle>
+                    <g id="Group-2" transform="translate(30.000000, 18.000000)">
+                        <path d="M15.1097561,37.3454545 C15.1097561,37.3454545 16.5487805,55.3 16.5487805,63.9181818 C5.03658537,66.7909091 2.87804878,70.3818182 -3.55271368e-14,68.2272727 C-2.27477657e-12,51.7090909 15.1097561,37.3454545 15.1097561,37.3454545 Z" id="left-wing" fill="#DE594A"></path>
+                        <path d="M57.5609756,37.3454545 C57.5609756,37.3454545 59,55.3 59,63.9181818 C47.4878049,66.7909091 45.3292683,70.3818182 42.4512195,68.2272727 C42.4512195,51.7090909 57.5609756,37.3454545 57.5609756,37.3454545 Z" id="right-wing" fill="#DE594A" transform="translate(50.725610, 53.114974) scale(-1, 1) translate(-50.725610, -53.114974) "></path>
+                        <path d="M35.71225,67.9643999 L22.7610305,67.9643999 C22.7610305,67.9643999 21.3220061,69.4007635 22.7610305,71.555309 C24.2000549,73.7098546 26.3585915,78.7371272 29.2366403,78.7371272 C32.114689,78.7371272 34.7871629,73.0942701 35.71225,71.555309 C36.6373371,70.016348 35.71225,67.9643999 35.71225,67.9643999 Z" id="Path-1" fill="#F0C747"></path>
+                        <path d="M14.3902439,37.3322661 C14.3902439,24.066069 28.0922509,5.1104502e-16 29.9213201,0 C31.7503892,-5.11045036e-16 44.6097561,24.066069 44.6097561,37.3322661 C44.6097561,37.3322661 44.6097561,63.2 43.3238194,64.290032 C37.5371043,71.4333688 20.176959,69.4851861 15.6761806,64.290032 C14.3902439,63.2 14.3902439,37.3322661 14.3902439,37.3322661 Z" id="main-body" fill="#FFFFFF" filter="url(#filter-1)"></path>
+                        <ellipse id="window" stroke="#46595D" stroke-width="2.15454545" fill="#A4B2B3" cx="29.5" cy="22.9818182" rx="5.75609756" ry="5.74545455"></ellipse>
+                        <g id="Group" transform="translate(11.512195, 34.472727)">
+                            <path d="M14.770534,13.601097 C16.1571252,11.6735217 18.9944819,9.21512993 21.1442403,8.19171169 C21.1442403,8.19171169 27.8578302,4.2220067 30.1962416,6.55609443 C32.5346531,8.89018216 28.5575945,15.5913587 28.5575945,15.5913587 C27.4956854,17.7209234 25.0688479,20.5852811 23.1381887,21.95328 C23.1381887,21.95328 8.42660927,32.9536529 6.08819649,30.6195638 C3.74978371,28.2854748 14.770534,13.601097 14.770534,13.601097 Z" id="center-wing" fill="#DE594A" filter="url(#filter-2)" transform="translate(18.347561, 18.382867) rotate(-45.000000) translate(-18.347561, -18.382867) "></path>
+                            <path d="M18.7073171,1.66897137 C21.8004269,2.16172197 23.5932505,9.18938855 23.5932505,9.18938855 C24.3481971,11.4461013 24.6575706,15.1875413 24.2597096,17.5200448 C24.2597096,17.5200448 21.832273,34.3377924 18.7073171,35.6261992 L18.7073171,1.66897137 Z" id="center-wing-copy" fill="#CE5245"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

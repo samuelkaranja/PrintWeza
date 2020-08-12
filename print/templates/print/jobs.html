@@ -1,0 +1,36 @@
+{% extends 'print/base.html' %}
+
+{% block content %}
+
+	{% include 'print/navbar.html' %}
+
+	<section class="jb">
+		<div class="container">
+			<h1>Jobs</h1>
+			{% for doc in document %}
+				<div class="row justify-content-center">
+
+					<div class="col-md-6 jb-txt">
+						<span>Project</span><br>
+						<span>{{ request.user.userprofile.phone_number }}</span>
+					</div>
+
+					<div class="col-md-6 jb-l">
+						<span>Kshs {{ doc.total_price }}.00</span><br>
+						<span>{{ doc.date_created | date:'d M, Y H:i a' }}&nbsp;&nbsp;<a href="{% url 'preview' doc.id %}">See more</a></span>
+					</div>
+				</div>
+				<hr>
+			{% empty %}
+				<div class="col-md-12">
+					<div class="alert alert-danger">
+						<h3>No Recent Documents uploaded!</h3>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</section>
+	<div style="position: absolute; width: 100%; bottom: 0;">
+		{% include 'print/footer.html' %}
+	</div>	
+{% endblock %}

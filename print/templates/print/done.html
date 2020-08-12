@@ -1,0 +1,20 @@
+{% extends 'print/base.html' %}
+
+{% load static %}
+
+{% block content %}
+	{% include 'print/navbar.html' %}
+
+	<div class="container">
+		<div class="row">
+			<div style="margin-top: 200px; margin-left: auto; margin-right: auto; text-align: center;">
+				<div class="col-md-12">
+					<img src="{% static 'print/images/rocket.svg' %}">
+					<h4 class="pt-3">Your print is on the way</h4>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br><br><br><br><br><br><br><br>`	
+	{% include 'print/footer.html' %}
+{% endblock %}

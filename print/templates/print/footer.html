@@ -1,0 +1,50 @@
+{% extends 'print/base.html' %}
+
+{% load static %}
+
+{% block content %}
+	<footer class="footer">
+	    <div class="container">
+	      <div class="row">
+	        <div class="col-md-8">
+	        	<a href="{% url 'home' %}"><img src="{% static 'print/images/logo-light.png' %}"></a>
+	        	<a href="">Get Started</a>
+	        	<a href="">For print shops</a>
+	        	<a href="">help@printweza.com</a>
+	        	<a href="">+254 729 435 585</a>
+	        </div>
+
+	        <div class="col-md-4">
+	        	<div class="social-share">
+	              <ul>
+	 				<li>
+	                  <a href="#"><i class="fab fa-google"></i></a>
+	                </li>
+	                <li>
+	                  <a href="#"><i class="fab fa-twitter"></i></a>
+	                </li>
+	                <li>
+	                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+	                </li>
+	              </ul>
+	            </div>
+	        </div>
+	      </div>
+	    
+
+		    <div class="row mt-4">
+		    	<div class="col-md-4">
+		    		<p>Print online now</p>
+		    	</div>
+
+		    	<div class="col-md-8">
+		    		<div class="policy">
+		    			<a href="">&copy; 2020 Printweza Ltd.</a>
+		    			<a href="{% url 'policy' %}">Privacy Policy</a>
+		    			<a href="{% url 'conditions' %}">Legal</a>
+		    		</div>
+		    	</div>
+		    </div>
+		</div>
+	  </footer>
+{% endblock %}

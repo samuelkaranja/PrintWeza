@@ -1,0 +1,134 @@
+{% extends 'print/base.html' %}
+
+{% load widget_tweaks %}
+
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block content %}
+
+{% include 'print/navbar.html' %}
+<br><br><br><br>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h1 class="prt">Let's get started</h1>
+
+			<div class="prt-frm">
+				<form method="POST" enctype="multipart/form-data">
+					{% csrf_token %}
+
+					{{ form.errors }}
+
+					<div style="display: none;">
+						<p>{{ form.user }}</p>
+					</div>
+					
+					<h6>DOCUMENT DETAILS</h6>
+					<div class="form-group">
+		                <label for="inputEmail4">Title of the Document:</label>
+		                {% render_field form.title type="text" class="form-control input" autocomplete="off" %}
+		            </div>
+
+		            <div class="form-group">
+		              <label for="inputAddress">Upload Document:</label>
+		              {% render_field form.file class="form-control input" id="inputAddress" autocomplete="off" %}
+		            </div>
+
+		            <div class="form-row">
+		              <div class="form-group col-md-6">
+		                <label for="inputEmail4">Number of Pages:</label>
+		                {% render_field form.pages type="number" class="form-control input" autocomplete="off" %}
+		              </div>
+		              <div class="form-group col-md-6">
+		                <label for="inputPassword4">Number of Copies:</label>
+		                {% render_field form.copies type="number" class="form-control input" autocomplete="off" %}
+		              </div>
+		            </div>
+
+		            <h6>DROPOFF DETAILS</h6>
+		            <div class="form-row">
+			            <div class="form-group col-md-6">
+			              <label for="inputAddress2" style="font-size: 16px;">Hostel/Apt/Academic Block name/Building:</label>
+			              {% render_field form.building type="text" class="form-control input" autocomplete="off" %}
+			            </div>
+
+			            <div class="form-group col-md-6">
+			              <label for="inputAddress2">Room/Class number/House no/Office no:</label>
+			              {% render_field form.office type="text" class="form-control input" autocomplete="off" %}
+			            </div>
+		        	</div>
+
+		        	<h6>PRINTING OPTIONS</h6>
+		        	<!-- <div class="form-row">
+		              <div class="form-group col-md-6">
+		                <label for="inputEmail4">Color:</label>
+		                {% render_field form.color class="form-control" %}
+		              </div>
+		              <div class="form-group col-md-6">
+		                <label for="inputPassword4">Extra:</label>
+		                {% render_field form.extra class="form-control" %}
+		              </div>
+		            </div> -->
+		            <h5 style="font-size: 17px; font-weight: bold; color: #494949">COLORED OR BLACK AND WHITE</h5>
+		            <div class="form-row">
+		            	<div class="form-group col-md-6">
+			               <label>Black and White</label>
+			            	<h3 style="font-size: 16px; padding: 0;">(Ksh.5/page)</h3>
+			                {% render_field form.color style="height: 25px; width: 25px;" type="radio" value="5" name="color" %}
+			            </div>
+
+			            <div class=" col-md-6">
+			            	<label>Colored</label>
+			            	<h3 style="font-size: 16px; padding: 0;">(Ksh.10/page)</h3>
+			                {% render_field form.color style="height: 25px; width: 25px;" type="radio" value="10" name="color" %}
+			            </div>
+		        	</div>
+
+		        	<h5 style="font-size: 17px; font-weight: bold; color: #494949">BINDING TYPE</h5>
+		            <div class="form-row">
+			            <div class="form-group col-md-3">
+			            	<label>No Binding</label>
+			            	<h3 style="font-size: 16px; padding: 0;">(no extra cost)</h3>
+			                {% render_field form.bind style="height: 25px; width: 25px;" type="radio" value="0" name="bind" %}
+			            </div>
+			            <div class="form-group col-md-3">
+			               <label>Stapled</label>
+			            	<h3 style="font-size: 16px; padding: 0;">(no extra cost)</h3>
+			                {% render_field form.bind style="height: 25px; width: 25px;" type="radio" value="0" name="bind" %}
+			            </div>
+			            <div class="form-group col-md-3">
+			            	<label>Spiral Bound</label>
+			            	<h3 style="font-size: 16px; padding: 0;">(Ksh.30)</h3>
+			                {% render_field form.bind style="height: 25px; width: 25px;" type="radio" value="30" name="bind" %}
+			            </div>
+			            <div class="form-group col-md-3">
+			               <label>Velo Bound</label>
+			            	<h3 style="font-size: 16px; padding: 0;">(Ksh.50)</h3>
+			                {% render_field form.bind style="height: 25px; width: 25px;" type="radio" value="50" name="bind" %}
+			            </div>
+		        	</div>
+
+		        	<div class="form-row">
+		        		<div class="form-group col-md-3">
+			               <label>Hard Cover</label>
+			            	<h3 style="font-size: 16px; padding: 0;">(Ksh.100)</h3>
+			                {% render_field form.bind style="height: 25px; width: 25px;" type="radio" value="100" name="bind" %}
+			            </div>
+		        	</div>
+
+		        	<h6>SUGGESTIONS</h6>
+		            <div class="form-group">
+		              <label>Any other suggestions (*Optional)</label>
+		              {% render_field form.suggestions class="form-control input" rows="6" autocomplete="off" %}
+		            </div>
+	            	<button type="submit" class="btn btn-primary btn-block">Upload Document</button>
+	          	</form>
+	          </div>
+      		</div>
+		</div>
+	</div>
+	<br><br><br><br><br>
+	{% include 'print/footer.html' %}
+{% endblock %}

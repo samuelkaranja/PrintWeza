@@ -1,0 +1,174 @@
+{% extends 'print/base.html' %}
+
+{% load widget_tweaks %}
+
+{% load static %}
+
+{% block content %}
+  {% include 'print/navbar.html' %}
+
+  <!-- Header Starts -->
+  <section class="Banner content-section">
+    <div class="container content-wrap text-center">
+      <h2>Print Online and have your work delivered to you</h2>
+      <P>Whatever the document, wherever you are, we will get the job done</P>
+      <a class="btn" href="{% url 'print' %}">TRY US NOW!</a>
+    </div>
+    <div class="overlay"></div>
+  </section>
+
+  <section class="intro">
+    <div class="container">
+      <div class="row justify-content-center">
+        <button class="btn" >Hello!</button>
+        <span>Do you do commercial printing?</span><a href="#">Click here</a>
+      </div>
+    </div>
+  </section>
+  <!-- Header Ends -->
+  <section id="steps" class="steps content-section">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="block-heading">
+            <h1>Do what really matter to you...</h1>
+          </div>
+          <h4>and let us handle the printing for you. All you need to do is...</h4>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+          <img src="{% static 'print/images/book.jpg' %}">
+          <p class="link">Prinweza&#8213;we will get the printing job done <a href="{% url 'print' %}">Try now &#x2197;</a></p>
+        </div>
+
+        <div class="col-lg-6">
+          <ol>
+            <li>
+              <h3>Choose format</h3>
+              <p class="pl">Choose from our wide variety of printing formats from banners, large format printing, flyers, stickers plus many more.</p>
+            </li>
+            <br>
+            <li>
+              <h3>Upload your files</h3>
+              <p class="pl">Once you have selected the printing format, upload your files from your device whether a computer, tablet or phone.</p>
+            </li>
+            <br>
+            <li>
+              <h3>Set your options</h3>
+              <p class="pl">Give us details of your printing job depending on the type of printing format you have selected. This will give you the cost for printing.</p>
+            </li>
+            <br>
+            <li>
+              <h3>Printing and delivery</h3>
+              <p class="pl">Tell us where you need the job deliverd and we will get your job printed and taken there.Is that simple actually.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- About Us Starts -->
+  <section class="service content-section text-center">
+    <div class="container">
+      <div class="block-heading">
+        <h2>Available printing formats</h2>
+        <p>Choose from our wide variety of printing formats from banners, large format printing, <br> flyers, stickers plus much more</p>
+      </div>
+
+      <div class="row">
+          <div class="col-md-3">
+              <div class="card">
+                  <img src="{% static 'print/images/printing.jpg' %}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                      <h5 class="card-title">Normal Printing</h5>
+                      <p class="card-text">Normal document printing e.g thesis, assignments, reports etc</p>
+                  </div>
+              </div>
+          </div> 
+
+          <div class="col-md-3">
+              <div class="card">
+                  <img src="{% static 'print/images/technical.jpg' %}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                      <h5 class="card-title">Technical Drawing</h5>
+                      <p class="card-text">Architectural and engineering drawings and blue prints</p>
+                  </div>
+              </div>
+          </div> 
+
+          <div class="col-md-3">
+              <div class="card">
+                  <img src="{% static 'print/images/publication.jpg' %}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                      <h5 class="card-title">Publications</h5>
+                      <p class="card-text">Books and Periodicals such as magazines, newsletters and news papers</p>
+                  </div>
+              </div>
+          </div> 
+
+          <div class="col-md-3">
+              <div class="card">
+                  <img src="{% static 'print/images/brand.png' %}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                      <h5 class="card-title">Branding</h5>
+                      <p class="card-text">Business cards, <br>  Flyers, Banners, Menus and Posters</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="help">
+      <div class="container">
+          <div class="row text-center">
+              <div class="col-lg-12">
+                  <h2> Print online now and have your work delivered to you</h2>
+                  <a href="{% url 'print' %}" class="btn">GET STARTED NOW!</a> 
+              </div> 
+          </div> 
+      </div> 
+  </section>
+
+  <section class="contact content-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6 col-lg-6 mt-1">
+          <p style="font-size: 20px;">E: <a style="color: #fff; text-decoration: underline;" href = "mailto: sam@printweza.com">sam@printweza.com</a></p>
+          <p style="font-size: 20px;">P: +254 729 435 585</p>
+          <p style="font-size: 18px; padding-right: 120px;">Ready to start your next printing job? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+        </div>
+        <div class="col-lg-6">
+          <div class="form-wrap">
+            <form method="POST">
+            	{% csrf_token %}
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4">Your Name</label>
+                  {% render_field form.name type="text" class="form-control" autocomplete="off" %}
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4">Email Address</label>
+                  {% render_field form.email type="email" class="form-control" autocomplete="off" %}
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputAddress">Message</label>
+                {% render_field form.message rows="7" class="form-control" autocomplete="off" %}
+              </div>
+
+              <div class="text-right">
+                <button type="submit" class="btn" style="background-color: orange; color: #fff; padding: 8px 50px; border-radius: 5px; font-weight: bold;">SEND ENQUIRY</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include 'print/footer.html' %}
+
+{% endblock %}

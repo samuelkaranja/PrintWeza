@@ -1,0 +1,138 @@
+{% extends 'print/base.html' %}
+
+{% block content %}
+	{% include 'print/navbar.html' %}
+	<br><br>
+	<div class="container">
+		<div class="preview">
+			{% if messages %}
+				{% for message in messages %}
+					<div class="alert alert-{{ message.tags }} text-center">
+						{{ message }}
+					</div>
+				{% endfor %}
+			{% endif %}
+			
+		{% for document in doc %}
+			<h1>Project</h1>
+			<div class="row">
+				<div class="col-md-10">
+					<h4>Document Title</h4>
+					<p>{{ document.title }}</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-10">
+					<h4>Document Uploaded</h4>
+					<p>{{ document.file.name }}</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-10">
+					<h4>Document Options</h4>	
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-10">
+					<p>{{ document.copies }} copy(ies)</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-10">
+					<p>{{ document.pages }} pages</p>
+				</div>
+			</div>
+
+			<!-- Color -->
+
+			{% if document.color == '5' %}
+			
+				<div class="row">
+					<div class="col-md-10">
+						<p>Black and White (Kshs.{{ document.color }}/page)</p>
+					</div>
+				</div>
+
+			{% else %}
+
+				<div class="row">
+					<div class="col-md-10">
+						<p>Colored (Kshs.{{ document.color }}/page)</p>
+					</div>
+				</div>
+
+			{% endif %}
+
+			<!-- Binding -->
+
+			{% if document.bind == '30' %}
+
+				<div class="row">
+					<div class="col-md-10">
+						<p>Spiral Bound (Kshs {{ document.bind }})</p>
+					</div>
+				</div>
+
+			{% elif document.bind == '50' %}
+
+				<div class="row">
+					<div class="col-md-10">
+						<p>Velo Bound (Kshs {{ document.bind }})</p>
+					</div>
+				</div>
+
+			{% elif document.bind == '100' %}
+
+				<div class="row">
+					<div class="col-md-10">
+						<p>Hard Cover (Kshs {{ document.bind }})</p>
+					</div>
+				</div>
+
+			{% else %}
+
+				<div class="row">
+					<div class="col-md-10">
+						<p>Stapled (Kshs {{ document.bind }})</p>
+					</div>
+				</div>
+
+			{% endif %}
+
+			<div class="row">
+				<div class="col-md-10">
+					<h4>Drop Off</h4>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-10">
+					<p>Hostel/Apt/Academic Block name/Building:  {{ document.building }}</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-10">
+					<p>Room/Class number/House no/Office no:  {{ document.office }}</p>
+				</div>
+			</div>
+			<br>
+			<a class="btn btn-success mr-3" href="{% url 'update' document.id %}">EDIT</a>
+			<a class="btn btn-primary" href="{% url 'total' document.id %}">PROCEED</a>
+
+		{% empty %}
+
+			<div class="alert alert-danger">
+				<h3>No Recent Documents uploaded!</h3>
+			</div>
+
+		{% endfor %}
+		</div>
+	</div>
+	<br><br><br>
+	{% include 'print/footer.html' %}
+{% endblock %}
